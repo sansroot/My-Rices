@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Horizontal e Responsiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @keyframes backgroundChange {
+    0% {
+        background-image: url('https://via.placeholder.com/1200x800/ff7f7f'); /* Imagem 1 */
+    }
+    33% {
+        background-image: url('https://via.placeholder.com/1200x800/7f7fff'); /* Imagem 2 */
+    }
+    66% {
+        background-image: url('https://via.placeholder.com/1200x800/7fff7f'); /* Imagem 3 */
+    }
+    100% {
+        background-image: url('https://via.placeholder.com/1200x800/ff7f7f'); /* Volta para a imagem 1 */
+    }
+}
+
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e2e;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 30px;
+            text-align: center;
+            font-family: "Silkscreen", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #a6e3a1;
+            font-family: "Silkscreen", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-family: "Silkscreen", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        
+        }
+        
+        .item-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+            justify-content: space-between; 
+            font-family: "Silkscreen", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        .item {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            background-color: #313244;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 20px); 
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .item-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .item-info {
+            text-align: center;
+        }
+        
+        .item-title {
+            font-size: 1.6rem;
+            color: #a6e3a1;
+            margin-bottom: 10px;
+        }
+        
+        .item-description {
+            font-size: 1rem;
+            color: #fab387;
+            margin-bottom: 15px;
+        }
+        
+        .link-button {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #585b70;
+            color: #cba6f7;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .link-button:hover {
+            background-color: #6c7086;
+        }
+        .alo{
+            color: #cba6f7
+        }
+    
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pick your favorite <p class="alo">*RICE*</p></h1>
+        <ul class="item-list">
+            <li class="item">
+                <img src="dotfiles-v3.png" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title">I3 - Dotfiles-v3</h2>
+                    <p class="item-description">i3 rice based on catppuccin palette wallpapers</p>
+                    <a href="https://github.com/kuringasan/Dotfiles-V3" class="link-button">Github page</a>
+                </div>
+            </li>
+            <li class="item">
+                <img src="dotfiles-v2.png" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title">I3 - Dotfiles-v2</h2>
+                    <p class="item-description">i3 rice based on blue/pink wallpapers</p>
+                    <a href="https://github.com/kuringasan/Dotfiles-V2" class="link-button">Github page</a>
+                </div>
+            </li>
+            <li class="item">
+                <img src="dotfiles-v1.png" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title">I3 - Dotfiles-v1</h2>
+                    <p class="item-description">i3 rice based on pink/gray wallpapers</p>
+                    <a href="https://github.com/kuringasan/Dotfiles" class="link-button">Github page</a>
+                </div>
+            </li>
+            <li class="item">
+                <img src="grayrice.png" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title">Gnome - GrayRice</h2>
+                    <p class="item-description">Gnome rice based on gray/synthwave wallpapers</p>
+                    <a href="https://github.com/kuringasan/GrayRice" class="link-button">Github page</a>
+                </div>
+            </li>
+            <li class="item">
+                <img src="tokyorice.png" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title">Gnome - TokyoRice</h2>
+                    <p class="item-description">Gnome rice based on purple wallpapers</p>
+                    <a href="https://github.com/kuringasan/Tokyo-Rice" class="link-button">Github page</a>
+                </div>
+            </li>
+            <li class="item">
+                <img src="lo-rice.png" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title">gnome - Lo-Rice</h2>
+                    <p class="item-description">Gnome rice based on Synthwave wallpapers</p>
+                    <a href="https://github.com/kuringasan/Lo-Rice" class="link-button">Github page</a>
+                </div>
+            </li>
+           
+        </ul>
+    </div>
+</body>
+</html>
