@@ -39,31 +39,31 @@
             padding: 20px;
         }
 
-        /* Estilo do Letreiro */
+       
         .carousel {
             position: absolute;
             top: 20px;
-            left: 0; /* Posiciona o letreiro no lado esquerdo */
+            left: 0; 
             font-family: 'Silkscreen', sans-serif;
             font-size: 1.5rem;
             color: #a6e3a1;
             white-space: nowrap;
             overflow: hidden;
-            width: 20%; /* Limita a largura do letreiro */
+            width: 20%; 
         }
 
         .carousel-text {
             display: inline-block;
             animation: scroll-left 10s linear infinite;
-            padding-left: 1%; /* Faz o texto começar do lado direito */
+            padding-left: 1%; 
         }
 
         @keyframes scroll-left {
             0% {
-                transform: translateX(105%); /* Começa do lado direito fora da tela */
+                transform: translateX(105%); 
             }
             100% {
-                transform: translateX(-100%); /* Move até desaparecer à esquerda */
+                transform: translateX(-100%); 
             }
         }
 
@@ -151,19 +151,19 @@
             color: #cba6f7;
         }
 
-        /* Esconde o player de música */
+        
         audio {
             display: none;
         }
     </style>
 </head>
 <body>
-    <!-- Letreiro com nome da música -->
+   
     <div class="carousel">
         <div class="carousel-text">Kudasai - Light Of Mine</div>
     </div>
 
-    <!-- Player de Música de fundo -->
+    
     <audio autoplay loop id="audio-player">
         <source src="musica.mp3" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
