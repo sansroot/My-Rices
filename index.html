@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Horizontal e Responsiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Rices</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,23 +25,48 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
             background-image: url('wallpaper.png');
-            background-size: cover; 
+            background-size: cover;
             background-position: center;
-            background-repeat: no-repeat; 
-
-
+            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
             padding: 20px;
         }
-        
+
+        /* Estilo do Letreiro */
+        .carousel {
+            position: absolute;
+            top: 20px;
+            left: 0; /* Posiciona o letreiro no lado esquerdo */
+            font-family: 'Silkscreen', sans-serif;
+            font-size: 1.5rem;
+            color: #a6e3a1;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 20%; /* Limita a largura do letreiro */
+        }
+
+        .carousel-text {
+            display: inline-block;
+            animation: scroll-left 10s linear infinite;
+            padding-left: 1%; /* Faz o texto começar do lado direito */
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(105%); /* Começa do lado direito fora da tela */
+            }
+            100% {
+                transform: translateX(-100%); /* Move até desaparecer à esquerda */
+            }
+        }
+
         .container {
             width: 100%;
             max-width: 1200px;
@@ -40,50 +75,39 @@
             font-family: "Silkscreen", sans-serif;
             font-weight: 400;
             font-style: normal;
-        
         }
-        
+
         h1 {
             font-size: 2.5rem;
             margin-bottom: 50px;
             color: #a6e3a1;
-            font-family: "Silkscreen", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-family: "Silkscreen", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        
         }
-        
+
         .item-list {
             list-style-type: none;
             padding: 0;
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 20px; 
-            justify-content: space-between; 
-            font-family: "Silkscreen", sans-serif;
-            font-weight: 400;
-            font-style: normal;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
         }
-        
+
         .item {
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             align-items: center;
             background-color: #31324480;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: calc(33% - 20px); 
+            width: calc(33% - 20px);
             padding: 20px;
             transition: transform 0.3s ease;
         }
-        
+
         .item:hover {
             transform: translateY(-5px);
         }
-        
+
         .item-image {
             width: 100%;
             height: auto;
@@ -91,23 +115,23 @@
             object-fit: cover;
             margin-bottom: 15px;
         }
-        
+
         .item-info {
             text-align: center;
         }
-        
+
         .item-title {
             font-size: 1.6rem;
             color: #a6e3a1;
             margin-bottom: 10px;
         }
-        
+
         .item-description {
             font-size: 1rem;
             color: #fab387;
             margin-bottom: 15px;
         }
-        
+
         .link-button {
             display: inline-block;
             padding: 12px 20px;
@@ -118,17 +142,33 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
-        
+
         .link-button:hover {
             background-color: #6c708680;
         }
-        .alo{
-            color: #cba6f7
+
+        .alo {
+            color: #cba6f7;
         }
-    
-        </style>
+
+        /* Esconde o player de música */
+        audio {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- Letreiro com nome da música -->
+    <div class="carousel">
+        <div class="carousel-text">Kudasai - Light Of Mine</div>
+    </div>
+
+    <!-- Player de Música de fundo -->
+    <audio autoplay loop id="audio-player">
+        <source src="musica.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
     <div class="container">
         <h1>Pick your favorite <p class="alo">*RICE*</p></h1>
         <ul class="item-list">
@@ -180,7 +220,6 @@
                     <a href="https://github.com/kuringasan/Lo-Rice" class="link-button">Github page</a>
                 </div>
             </li>
-           
         </ul>
     </div>
 </body>
