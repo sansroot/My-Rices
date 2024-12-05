@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAC21OYAtdHvAGSAogArKSgAt9HvALfU7wAWFyAAGRgaAMHZ4wCswtUAWHOOADAvMQAdGxoAq8veAI5+eAAgICAArc7eACQhIwB5kJwADxISADg5PQC0ze0AJygmAGN+nQC41tsAtNDtABQTFQA5PkMAIS8yAHiVtAAZFhUAKisvAHJiXAC41fMALy0sAB0cHgDA4eoANDIyACMfHgCrzeUAXHmYAK7P4gCvz+IAY3qSACQkJADI6O0AtM7oABMSEwC2z+sAOj1BALXT7gA8PUEAttPuALfT7gC40+4AKywqABgWFgA+PkQAvNrfAJqvsQDNz9AAHBcZACk0OQAfGhkAq8fmAKzN3QDE4+gAr8vpADc4PAAoIyIA8O7tABEREQCz0+YAKCgoADs8PwAqKCgAutrgAC4sKwAaGhoAqsTeAEZGQgBZd5QArsfnAJ24xABQRT8AUUU/AI2jqgAREA8AnKGkALXP7QA7PEAAtNLtALXS7QCfoqcAcGBZACorKQC41ucAtL24ABUXGwAXFhgAxtbnAFl2kgAgHh4AmLnIAB8fIQDE4ucAIB8hAGdXUQAPCwoAJCIhAJq+zgCAiJoAMDhHALrO0ACwzegAGyY2AGtbVABie5gAEhETADs8OACVhX8AJycnACknJwApKCoADRclAI+OkQCOk44At9PxAC0rKgC2u7wAP0BEAC8rKgClx9cASltnABsZGQAuLy0AKDA5ABYcIgAaGx8Ai3t0AC8xMwBgVk8A5enqADEyNgAhHh8Ar9DgAEpMTQAkIyUAkId9AF9+mQAqJSIAs9HsACUmLgA6Oz8AtNHsALfV5gAWFRcAjZGSALLAugC61e8ALC0xAGFRSgAbGh0AW1dTAENhegAfGRoAmrDBAKrL2wAfHR0A6ejoAB8eIAAjPFUAICIjAFJidACwz94AX3uaADU4QACwt7IAss7tAJ+72QAoJiYAY3+dALXU7QAqKikAIS07ACwqKQA+P0MAu9nqAC0uLABwaWUAHhwbAFl2lQA2NTgAdHR0ALHN6wA5Oj4AKCknALXV6ABsfpIAaICYAE9wjQBcTEYALCoqAHFjXQArLDAAc2NdABsXFgBqhacAQkNHAKnK2gAeHBwAHh0fAAsLDgDD4usANDU5AK/O3QBdepkAsNDjALC2sQDJ6e4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApRGGesEWFsSoZpJLX1ihdD+0S316A7fIsybSgIdVayBsUHtJA8plq0BST02evdp+zncDuYNRv0PCFbIuYcnNi5RFuTfUrxdZlwFcXGejXg5UliKdVyiaAVs0NjQcbst4Vo28DEfYtjI0f38FplM7sYQQXb52dTV/f38dZKkvE3HZEKcNrbUJf39/K3M8nBquSNGnQaSFuDSOIXKcGR4a1yqnmwB8Cj0wJUY0Y5hiBxIpkcU+ik44Bm2BJx+iiaCqYGC709PTqpUEAscLI5CPzNUk28NED8BqxnCIrNZoRBRMQi0buixKkxSfsIxERMNvGDppCNB5gnkzz5lamTMxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon">
     <style>
         * {
             margin: 0;
@@ -29,31 +28,44 @@
             padding: 20px;
         }
 
-       
-        .carousel {
+        .carousel-container {
             position: absolute;
             top: 15px;
-            left: 0; 
+            left: 0;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            z-index: 10;
+        }
+
+        .playing-text {
+            font-family: 'Silkscreen', sans-serif;
+            font-size: 1.5rem;
+            color: #a6e3a1;
+            margin-right: 10px;
+        }
+
+        .carousel {
             font-family: 'Silkscreen', sans-serif;
             font-size: 1.5rem;
             color: #cba6f7;
             white-space: nowrap;
             overflow: hidden;
-            width: 3800%; 
+            width: 3800%;
         }
 
         .carousel-text {
             display: inline-block;
             animation: scroll-left 20s linear infinite;
-            padding-left: 1%; 
+            padding-left: 1%;
         }
 
         @keyframes scroll-left {
             0% {
-                transform: translateX(125%); 
+                transform: translateX(125%);
             }
             100% {
-                transform: translateX(-100%); 
+                transform: translateX(-100%);
             }
         }
 
@@ -86,7 +98,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #31324480;
+            background-color: #31324450;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: calc(33% - 20px);
@@ -125,7 +137,7 @@
         .link-button {
             display: inline-block;
             padding: 12px 20px;
-            background-color: #585b7080;
+            background-color: #585b7050;
             color: #cba6f7;
             text-decoration: none;
             border-radius: 5px;
@@ -134,28 +146,29 @@
         }
 
         .link-button:hover {
-            background-color: #6c708680;
+            background-color: #6c708650;
         }
 
         .alo {
             color: #cba6f7;
         }
 
-        
         audio {
             display: none;
         }
     </style>
 </head>
 <body>
-   
-    <div class="carousel">
-        <div class="carousel-text">Kudasai - vibrancy</div>
+    
+    <div class="carousel-container">
+        <span class="playing-text">Playing:</span>
+        <div class="carousel">
+            <div class="carousel-text">mylesxiety - it will be alright</div>
+        </div>
     </div>
 
-    
     <audio autoplay loop id="audio-player">
-        <source src="musica1.mp3" type="audio/mp3">
+        <source src="musica3.mp3" type="audio/mp3">
     </audio>
 
     <div class="container">
