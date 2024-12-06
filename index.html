@@ -27,6 +27,19 @@
             align-items: flex-start;
             min-height: 100vh;
             padding: 20px;
+            position: relative;
+            overflow-y: auto; 
+        }
+
+       
+        .rain-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
         }
 
         .carousel-container {
@@ -57,7 +70,7 @@
 
         .carousel-text {
             display: inline-block;
-            animation: scroll-left 20s linear infinite;
+            animation: scroll-left 10s linear infinite;
             padding-left: 1%;
         }
 
@@ -161,15 +174,18 @@
 </head>
 <body>
     
+    
+    <canvas class="rain-canvas"></canvas>
+
     <div class="carousel-container">
         <span class="playing-text">Playing:</span>
         <div class="carousel">
-            <div class="carousel-text">mylesxiety - it will be alright</div>
+            <div class="carousel-text">Surf Curse - Freaks</div>
         </div>
     </div>
 
     <audio autoplay loop id="audio-player">
-        <source src="musica3.mp3" type="audio/mp3">
+        <source src="musica4.mp3" type="audio/mp3">
     </audio>
 
     <div class="container">
@@ -234,5 +250,56 @@
             
         </ul>
     </div>
+
+    <script>
+        
+        const canvas = document.querySelector('.rain-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let drops = [];
+        const numberOfDrops = 100;
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function createDrop() {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height - canvas.height;
+            let speed = Math.random() * 1 + 1;
+            let length = Math.random() * 15 + 5;
+            drops.push({ x, y, speed, length });
+        }
+
+        function drawRain() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(174, 194, 224, 0.6)';
+            ctx.strokeStyle = 'rgba(174, 194, 224, 0.6)';
+            ctx.lineWidth = 2;
+
+            for (let i = 0; i < drops.length; i++) {
+                let drop = drops[i];
+                ctx.beginPath();
+                ctx.moveTo(drop.x, drop.y);
+                ctx.lineTo(drop.x, drop.y + drop.length);
+                ctx.stroke();
+
+                drop.y += drop.speed;
+
+                if (drop.y > canvas.height) {
+                    drop.y = -drop.length;
+                }
+            }
+        }
+
+        function updateRain() {
+            if (drops.length < numberOfDrops) {
+                createDrop();
+            }
+            drawRain();
+            requestAnimationFrame(updateRain);
+        }
+
+        updateRain();
+    </script>
 </body>
 </html>
