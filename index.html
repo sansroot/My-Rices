@@ -31,7 +31,6 @@
             overflow-y: auto; 
         }
 
-       
         .rain-canvas {
             position: absolute;
             top: 0;
@@ -112,12 +111,27 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #31324450;
+            background-color: transparent; 
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: calc(33% - 20px);
             padding: 20px;
             transition: transform 0.3s ease;
+            position: relative; 
+            backdrop-filter: blur(5px);
+        }
+
+        .item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 68, 0.5); 
+            border-radius: 8px; 
+            filter: blur(8px); 
+            z-index: -1; 
         }
 
         .item:hover {
@@ -173,8 +187,6 @@
     </style>
 </head>
 <body>
-    
-    
     <canvas class="rain-canvas"></canvas>
 
     <div class="carousel-container">
@@ -247,12 +259,11 @@
                     <a href="https://github.com/kuringasan/Lo-Rice" class="link-button">Github repo</a>
                 </div>
             </li>
-            
         </ul>
     </div>
 
     <script>
-        
+        // Efeito de Chuva
         const canvas = document.querySelector('.rain-canvas');
         const ctx = canvas.getContext('2d');
 
