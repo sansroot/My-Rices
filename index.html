@@ -124,8 +124,8 @@
             backdrop-filter: blur(5px);
             opacity: 0;
             animation: fadeIn 0.6s ease-out forwards;
-            box-sizing: border-box; /* Garante que a borda não altere o tamanho do item */
-            border: 2px solid transparent; /* Inicialmente borda invisível */
+            box-sizing: border-box; 
+            border: 2px solid transparent; 
         }
 
         .item::before {
@@ -141,10 +141,10 @@
             z-index: -1;
         }
 
-        /* Animação da borda e efeito no hover */
+        
         .item:hover {
-            border: 3px solid #cba6f7; /* Borda visível no hover */
-            background-color: #cba6f740; /* Cor de fundo com leve transparência */
+            border: 3px solid #cba6f7; 
+            background-color: #cba6f740; 
         }
 
         .item-image {
@@ -153,11 +153,11 @@
             border-radius: 8px;
             object-fit: cover;
             margin-bottom: 15px;
-            transition: transform 0.3s ease; /* Transição mais suave da imagem */
+            transition: transform 0.3s ease; 
         }
 
         .item:hover .item-image {
-            transform: scale(1.05); /* Efeito de zoom sem alterar o layout */
+            transform: scale(1.05); 
         }
 
         .item-info {
@@ -246,12 +246,12 @@
     <div class="carousel-container">
         <span class="playing-text">Playing:</span>
         <div class="carousel">
-            <div class="carousel-text">Bonjr - if it's real, then i'll stay</div>
+            <div class="carousel-text">hisohkah - school rooftop</div>
         </div>
     </div>
 
     <audio autoplay loop id="audio-player">
-        <source src="musica5.mp3" type="audio/mp3">
+        <source src="musica7.mp3" type="audio/mp3">
     </audio>
     <audio autoplay loop id="audio-player2">
         <source src="rain.mp3" type="audio/mp3">
@@ -323,7 +323,7 @@
     </div>
 
     <script>
-        // Efeito de Chuva
+
         const canvas = document.querySelector('.rain-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -372,7 +372,7 @@
 
         updateRain();
 
-        // Diminuir o volume dos áudios
+    
         document.getElementById("audio-player").volume = 0.5;
         document.getElementById("audio-player2").volume = 1;
         document.getElementById("audio-player3").volume = 0.3;
