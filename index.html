@@ -19,6 +19,29 @@
             box-sizing: border-box;
         }
 
+        @keyframes colorChange {
+            0% {
+                color: #b4befe; 
+            }
+            25% {
+                color: #eba0ac; 
+            }
+            50% {
+                color: #fab387; 
+            }
+            75% {
+                color: #cba6f7; 
+            }
+            100% {
+                color: #a6e3a1; 
+            }
+        }
+
+        .alo {
+            font-size: 60px;
+            animation: colorChange 5s infinite; /* Aplica a animação */
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-image: url('wallpaper.png');
@@ -57,7 +80,7 @@
         .playing-text {
             font-family: 'Silkscreen', sans-serif;
             font-size: 1.5rem;
-            color: #89b4fa;
+            color: #cba6f7;
             margin-right: 10px;
         }
 
@@ -72,7 +95,7 @@
 
         .carousel-text {
             display: inline-block;
-            animation: scroll-left 10s linear infinite;
+            animation: scroll-left 10s linear infinite, colorChange 5s infinite; /* Aplica as animações de rolagem e mudança de cor */
             padding-left: 1%;
         }
 
@@ -98,7 +121,7 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 50px;
-            color: #89b4fa;
+            color: #cba6f7;
         }
 
         .item-list {
@@ -141,7 +164,6 @@
             z-index: -1;
         }
 
-        
         .item:hover {
             border: 2px solid #cba6f7; 
             background-color: #cba6f740; 
@@ -155,7 +177,6 @@
             margin-bottom: 15px;
             transition: transform 0.3s ease; 
         }
-
 
         .item-info {
             text-align: center;
@@ -369,7 +390,6 @@
 
         updateRain();
 
-    
         document.getElementById("audio-player").volume = 0.5;
         document.getElementById("audio-player2").volume = 1;
         document.getElementById("audio-player3").volume = 0.3;
