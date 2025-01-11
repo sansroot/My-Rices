@@ -90,7 +90,7 @@
             color: #cba6f7;
             white-space: nowrap;
             overflow: hidden;
-            width: 3800%;
+            width: 100%;
         }
 
         .carousel-text {
@@ -130,7 +130,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: space-between;
+            justify-content: center; /* Coloca os itens no centro */
         }
 
         .item {
@@ -140,7 +140,8 @@
             background-color: transparent;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: calc(33% - 20px);
+            width: 100%; /* Garantir que ocupe 100% da largura disponível em telas pequenas */
+            max-width: 350px; /* Aumentar a largura máxima para 350px */
             padding: 20px;
             transition: background-color 0.6s ease, border 0.3s ease; 
             position: relative;
@@ -256,8 +257,47 @@
         .item:nth-child(7) {
             animation-delay: 1.2s;
         }
+
         .nao{
             color: #f38ba8;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Tamanho menor no mobile */
+            }
+
+            .item-title {
+                font-size: 1.4rem;
+            }
+
+            .item-description {
+                font-size: 0.9rem;
+            }
+
+            .link-button {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .carousel-text {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .item-list {
+                justify-content: center;
+            }
+
+            .item {
+                width: 100%; /* Cada item ocupa toda a largura disponível */
+                max-width: none; /* Retira o limite de largura */
+            }
         }
     </style>
 </head>
