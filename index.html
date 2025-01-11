@@ -21,52 +21,74 @@
 
         @keyframes colorChange {
             0% {
-                color: #b4befe;
-                transition: all 3.0s; 
+                color: #a6e3a1;
+             
             }
             25% {
                 color: #eba0ac;
-                transition: all 3.0s; 
+                
             }
             50% {
                 color: #fab387;
-                transition: all 3.0s; 
+              
             }
             75% {
                 color: #cba6f7;
-                transition: all 3.0s; 
+                 
             }
             100% {
                 color: #a6e3a1; 
-                transition: all 3.0s;
+               
             }
         }
         @keyframes colorChange1 {
             0% {
-                color: #fab387;
-                transition: all 3.0s; 
+                color: #b4befe;
+             
             }
             25% {
                 color:  #cba6f7;
-                transition: all 3.0s; 
+              
             }
             50% {
                 color: #a6e3a1;
-                transition: all 3.0s; 
+            
             }
             75% {
                 color: #eba0ac;
-                transition: all 3.0s; 
+      
             }
             100% {
                 color:  #b4befe; 
-                transition: all 3.0s;
+
+            }
+        }
+        @keyframes colorChange2 {
+            0% {
+                color: #a6e3a1;
+             
+            }
+            25% {
+                color:  #cba6f7;
+              
+            }
+            50% {
+                color: #b4befe;
+            
+            }
+            75% {
+                color: #eba0ac;
+      
+            }
+            100% {
+                color:  #a6e3a1; 
+
             }
         }
 
         .alo {
             font-size: 60px;
-            animation: colorChange1 30s infinite; 
+            animation: colorChange1 8s infinite ease-in-out; 
         }
 
         body {
@@ -123,7 +145,7 @@
 
         .carousel-text {
             display: inline-block;
-            animation: scroll-left 10s linear infinite, colorChange 30s infinite; 
+            animation: scroll-left 10s linear infinite, colorChange 8s infinite ease-in-out; 
             padding-left: 1%;
         }
 
@@ -239,7 +261,6 @@
         }
 
         .alo {
-            color: #cba6f7;
             font-size: 60px;
         }
 
@@ -303,7 +324,7 @@
             font-style: normal;
             color: #eba0ac;
             margin-bottom: 50px;
-            animation: piscar 0.8s infinite, desaparecer 30s forwards;
+            animation: piscar 0.8s infinite, desaparecer 30s forwards, colorChange2 8s infinite ease-in-out;
         }
 
         
