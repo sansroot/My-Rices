@@ -21,25 +21,52 @@
 
         @keyframes colorChange {
             0% {
-                color: #b4befe; 
+                color: #b4befe;
+                transition: all 3.0s; 
             }
             25% {
-                color: #eba0ac; 
+                color: #eba0ac;
+                transition: all 3.0s; 
             }
             50% {
-                color: #fab387; 
+                color: #fab387;
+                transition: all 3.0s; 
             }
             75% {
-                color: #cba6f7; 
+                color: #cba6f7;
+                transition: all 3.0s; 
             }
             100% {
                 color: #a6e3a1; 
+                transition: all 3.0s;
+            }
+        }
+        @keyframes colorChange1 {
+            0% {
+                color: #fab387;
+                transition: all 3.0s; 
+            }
+            25% {
+                color:  #cba6f7;
+                transition: all 3.0s; 
+            }
+            50% {
+                color: #a6e3a1;
+                transition: all 3.0s; 
+            }
+            75% {
+                color: #eba0ac;
+                transition: all 3.0s; 
+            }
+            100% {
+                color:  #b4befe; 
+                transition: all 3.0s;
             }
         }
 
         .alo {
             font-size: 60px;
-            animation: colorChange 15s infinite; 
+            animation: colorChange1 30s infinite; 
         }
 
         body {
@@ -95,7 +122,7 @@
 
         .carousel-text {
             display: inline-block;
-            animation: scroll-left 10s linear infinite, colorChange 15s infinite; 
+            animation: scroll-left 10s linear infinite, colorChange 30s infinite; 
             padding-left: 1%;
         }
 
