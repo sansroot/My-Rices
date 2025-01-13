@@ -79,19 +79,20 @@
         }
     
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('wallpaper.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px;
-            position: relative;
-            overflow-y: auto;
-        }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('wallpaper.png');
+    background-size: cover; /* Garante que a imagem cubra toda a tela */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Imagem de fundo fixa durante a rolagem */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow-y: auto;
+}
     
         .rain-canvas {
             position: absolute;
@@ -628,7 +629,7 @@
         <span class="playing-text">Playing:</span>
         
         <div class="carousel">
-            <div class="carousel-text">Instupendo - Comfort chain</div>  
+            <div class="carousel-text">bladefear - fusion</div>  
         </div>
     </div>
 
@@ -795,9 +796,9 @@
 
         updateRain();
 
-        document.getElementById("audio-player").volume = 0.6;
-        document.getElementById("audio-player2").volume = 1;
-        document.getElementById("audio-player3").volume = 0.3;
+        document.getElementById("audio-player").volume = 0.4;
+        document.getElementById("audio-player2").volume = 2;
+        document.getElementById("audio-player3").volume = 1;
     </script>
 </body>
 </html>
