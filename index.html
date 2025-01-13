@@ -170,7 +170,7 @@
             justify-content: center;
         }
     
-        .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .mauve1 {
+        .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .yellow1, .mauve1 {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -220,6 +220,11 @@
             border: 2px solid #cba6f7;
             background-color: #cba6f740;
         }
+        .yellow1:hover {
+            border: 2px solid #f9e2af;
+            background-color: #f9e2af40;
+        }
+
 
 
         .peach1::before {
@@ -283,6 +288,18 @@
             z-index: -1;
         }
         .mauve1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 68, 0.5);
+            border-radius: 8px;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .yellow1::before {
             content: '';
             position: absolute;
             top: 0;
@@ -362,6 +379,16 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
+        .link-sapphire {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #7f849c40;
+            color: #f9e2af;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
         .link-peach {
             display: inline-block;
             padding: 12px 20px;
@@ -402,6 +429,16 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
+        .link-yellow {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #7f849c40;
+            color: #f9e2af;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
     
         .link-button:hover {
             background-color: #cba6f740;
@@ -420,6 +457,9 @@
         }
         .link-green:hover {
             background-color: #a6e3a140;
+        }
+        .link-yellow:hover {
+            background-color: #f9e2af40;
         }
     
         .alo {
@@ -456,16 +496,13 @@
         .green1:nth-child(4) {
             animation-delay: 0.6s;
         }
-    
         .sapphire1:nth-child(5) {
             animation-delay: 0.8s;
         }
-    
-        .lavender1:nth-child(6) {
+        .yellow1:nth-child(6) {
             animation-delay: 1s;
         }
-    
-        .item:nth-child(7) {
+        .lavender1:nth-child(7) {
             animation-delay: 1.2s;
         }
         .item:nth-child(8) {
@@ -479,6 +516,9 @@
         }
         .item:nth-child(11) {
             animation-delay: 2.0s;
+        }
+        .item:nth-child(12) {
+            animation-delay: 2.2s;
         }
     
         .nao{
@@ -538,7 +578,7 @@
                 justify-content: center;
             }
     
-            .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .mauve1 {
+            .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .mauve1, .yellow1 {
                 width: 100%;
                 max-width: 100%;
             }
@@ -564,6 +604,9 @@
     
         .peach{
             color: #fab387;
+        }
+        .yellow{
+            color: #f9e2af;
         }
     
         .red{
@@ -651,6 +694,14 @@
                     <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="sapphire">sapphire</p></h2>
                     <p class="item-description">hyprland rice based on sapphire wallpapers</p>
                     <a href="https://github.com/sansroot/hypr-dots/tree/sapphire" class="link-sapphire">Github repo</a>
+                </div>
+            </li>
+            <li class="yellow1">
+                <img src="yellow.gif" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="yellow">yellow</p></h2>
+                    <p class="item-description">hyprland rice based on lavender wallpapers</p>
+                    <a href="https://github.com/sansroot/hypr-dots/tree/yellow" class="link-yellow">Github repo</a>
                 </div>
             </li>
             <li class="lavender1">
