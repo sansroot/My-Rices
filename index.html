@@ -571,19 +571,20 @@
         }
         button{
             position: absolute;
+            font-size: 20px;
             top: 50px;
             left: 2px;
             display: flex;
             border: none;
             align-items: center;
-            padding-left: 10px;
+            padding-left: 11px;
             z-index: 10;
             text-align: center;
             font-family: "Silkscreen", sans-serif;
             font-weight: 400;
             background-color: transparent;
             font-style: normal;
-            color: #eba0ac;
+            color: #cba6f7;
             margin-bottom: 50px;
             animation: piscar 0.8s infinite;
         }
@@ -609,7 +610,8 @@
     <audio id="audio-player3" loop>
         <source src="rain2.mp3" type="audio/mp3">
     </audio>
-    <button id="play-button">click me to play</button>
+    <button id="play-button">▶</button>
+    <button id="stop-button" style="display: none;">⏹</button> 
     <div class="container">
         <h1>Pick your favorite <p class="alo">*RICE*</p></h1>
         <ul class="item-list">
@@ -712,6 +714,7 @@
         </ul>
     </div>
     <script>
+        let rainInterval;
         document.getElementById("play-button").addEventListener("click", function() {
             document.getElementById("audio-player").play();
             document.getElementById("audio-player2").play();
@@ -719,6 +722,18 @@
             const carouselText = document.querySelector(".carousel-text");
             carouselText.textContent = "bladefear - fusion"; 
             this.style.display = 'none';
+            document.getElementById("stop-button").style.display = 'inline-block'; 
+            startRain();
+        });
+        document.getElementById("stop-button").addEventListener("click", function() {
+            document.getElementById("audio-player").pause();
+            document.getElementById("audio-player2").pause();
+            document.getElementById("audio-player3").pause();
+            const carouselText = document.querySelector(".carousel-text");
+            carouselText.textContent = "xxxx"; 
+            this.style.display = 'none'; 
+            document.getElementById("play-button").style.display = 'inline-block'; 
+            stopRain(); 
         });
         const canvas = document.querySelector('.rain-canvas');
         const ctx = canvas.getContext('2d');
@@ -726,6 +741,7 @@
         const numberOfDrops = 75;
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+
         function createDrop() {
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height - canvas.height;
@@ -733,6 +749,7 @@
             let length = Math.random() * 15 + 5;
             drops.push({ x, y, speed, length });
         }
+
         function drawRain() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = 'rgba(174, 194, 224, 0.6)';
@@ -750,17 +767,26 @@
                 }
             }
         }
+
         function updateRain() {
             if (drops.length < numberOfDrops) {
                 createDrop();
             }
             drawRain();
-            requestAnimationFrame(updateRain);
+            rainInterval = requestAnimationFrame(updateRain);
         }
-        updateRain();
+
+        function startRain() {
+            updateRain();
+        }
+
+        function stopRain() {
+            cancelAnimationFrame(rainInterval); 
+            drops = [];
+        }
+
         document.getElementById("audio-player").volume = 0.4;
         document.getElementById("audio-player2").volume = 2;
         document.getElementById("audio-player3").volume = 1;
     </script>
 </body>
-</html>
