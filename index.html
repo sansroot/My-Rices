@@ -619,29 +619,52 @@
         .lavender{
             color: #b4befe;
         }
+        button{
+            position: absolute;
+            top: 50px;
+            left: 2px;
+            display: flex;
+            border: none;
+            align-items: center;
+            padding-left: 10px;
+            z-index: 10;
+            text-align: center;
+            font-family: "Silkscreen", sans-serif;
+            font-weight: 400;
+            background-color: transparent;
+            font-style: normal;
+            color: #eba0ac;
+            margin-bottom: 50px;
+            animation: piscar 0.8s infinite;
+        }
+        button:hover{
+            animation: colorChange 1s infinite;
+        }
     </style>
     
 </head>
 <body>
     <canvas class="rain-canvas"></canvas>
-    <span class="warning">ENABLE AUTOPLAY</span>
     <div class="carousel-container">
         <span class="playing-text">Playing:</span>
-        
         <div class="carousel">
-            <div class="carousel-text">bladefear - fusion</div>  
+            <div class="carousel-text">bladefear - fusion</div>
         </div>
     </div>
 
-    <audio autoplay loop id="audio-player">
+    <!-- Áudios -->
+    <audio id="audio-player" loop>
         <source src="musica.mp3" type="audio/mp3">
     </audio>
-    <audio autoplay loop id="audio-player2">
+    <audio id="audio-player2" loop>
         <source src="rain.mp3" type="audio/mp3">
     </audio>
-    <audio autoplay loop id="audio-player3">
+    <audio id="audio-player3" loop>
         <source src="rain2.mp3" type="audio/mp3">
     </audio>
+
+    <!-- Botão para iniciar a reprodução -->
+    <button id="play-button">click me to play</button>
 
     <div class="container">
         <h1>Pick your favorite <p class="alo">*RICE*</p></h1>
@@ -747,6 +770,16 @@
     </div>
 
     <script>
+        // Função para iniciar a reprodução dos áudios
+        document.getElementById("play-button").addEventListener("click", function() {
+            // Reproduz os três áudios
+            document.getElementById("audio-player").play();
+            document.getElementById("audio-player2").play();
+            document.getElementById("audio-player3").play();
+            
+            // Remove o botão da tela após o clique
+            this.style.display = 'none';
+        });
 
         const canvas = document.querySelector('.rain-canvas');
         const ctx = canvas.getContext('2d');
@@ -796,6 +829,7 @@
 
         updateRain();
 
+        // Ajuste de volume dos áudios
         document.getElementById("audio-player").volume = 0.4;
         document.getElementById("audio-player2").volume = 2;
         document.getElementById("audio-player3").volume = 1;
