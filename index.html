@@ -158,7 +158,7 @@
             gap: 20px;
             justify-content: center;
         }
-        .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .yellow1, .mauve1 {
+        .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .yellow1, .mauve1, .pink1, .blue1 {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -205,6 +205,14 @@
         .yellow1:hover {
             border: 2px solid #f9e2af;
             background-color: #f9e2af40;
+        }
+        .blue1:hover {
+            border: 2px solid #89b4fa;
+            background-color: #89b4fa40;
+        }
+        .pink1:hover {
+            border: 2px solid #f5c2e7;
+            background-color: #f5c2e740;
         }
         .peach1::before {
             content: '';
@@ -279,6 +287,30 @@
             z-index: -1;
         }
         .yellow1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 68, 0.5);
+            border-radius: 8px;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .pink1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 68, 0.5);
+            border-radius: 8px;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .blue1::before {
             content: '';
             position: absolute;
             top: 0;
@@ -402,6 +434,26 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
+        .link-blue {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #7f849c40;
+            color: #89b4fa;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .link-pink {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #7f849c40;
+            color: #f5c2e7;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
         .link-button:hover {
             background-color: #cba6f740;
         }
@@ -422,6 +474,12 @@
         }
         .link-yellow:hover {
             background-color: #f9e2af40;
+        }
+        .link-blue:hover {
+            background-color: #89b4fa40;
+        }
+        .link-pink:hover {
+            background-color: #f5c2e740;
         }
         .alo {
             font-size: 60px;
@@ -460,10 +518,10 @@
         .lavender1:nth-child(7) {
             animation-delay: 1.2s;
         }
-        .item:nth-child(8) {
+        .blue1:nth-child(8) {
             animation-delay: 1.4s;
         }
-        .item:nth-child(9) {
+        .pink1:nth-child(9) {
             animation-delay: 1.6s;
         }
         .item:nth-child(10) {
@@ -474,6 +532,12 @@
         }
         .item:nth-child(12) {
             animation-delay: 2.2s;
+        }
+        .item:nth-child(13) {
+            animation-delay: 2.4s;
+        }
+        .item:nth-child(14) {
+            animation-delay: 2.6s;
         }
         .nao{
             color: #f38ba8;
@@ -522,7 +586,7 @@
             .item-list {
                 justify-content: center;
             }
-            .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .mauve1, .yellow1 {
+            .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .mauve1, .yellow1, .blue1, .pink1 {
                 width: 100%;
                 max-width: 100%;
             }
@@ -568,6 +632,12 @@
     
         .lavender{
             color: #b4befe;
+        }
+        .blue{
+            color: #89b4fa;
+        }
+        .pink{
+            color: #f5c2e7;
         }
         button{
             position: absolute;
@@ -669,6 +739,22 @@
                     <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="lavender">lavender</p></h2>
                     <p class="item-description">hyprland rice based on lavender wallpapers</p>
                     <a href="https://github.com/sansroot/hypr-dots/tree/lavender" class="link-lavender">Github repo</a>
+                </div>
+            </li>
+            <li class="blue1">
+                <img src="blue.gif" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="blue">blue</p></h2>
+                    <p class="item-description">hyprland rice based on lavender wallpapers</p>
+                    <a href="https://github.com/sansroot/hypr-dots/tree/lavender" class="link-blue">Github repo</a>
+                </div>
+            </li>
+            <li class="pink1">
+                <img src="pink.gif" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="pink">pink</p></h2>
+                    <p class="item-description">hyprland rice based on lavender wallpapers</p>
+                    <a href="https://github.com/sansroot/hypr-dots/tree/lavender" class="link-pink">Github repo</a>
                 </div>
             </li>
             <li class="item">
