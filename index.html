@@ -158,7 +158,7 @@
             gap: 20px;
             justify-content: center;
         }
-        .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .yellow1, .mauve1, .pink1, .blue1, .tokyo1, .dawn1, .moon1 {
+        .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .yellow1, .mauve1, .pink1, .blue1, .tokyo1, .dawn1, .moon1, .black1 {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -181,6 +181,10 @@
         .peach1:hover {
             border: 2px solid #fab387;
             background-color: #fab38740;
+        }
+        .black1:hover {
+            border: 2px solid #ffffff;
+            background-color: #ffffff40;
         }
         .sapphire1:hover {
             border: 2px solid #74c7ec;
@@ -227,6 +231,18 @@
             background-color: #F0BE8B40;
         }
         .peach1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 68, 0.5);
+            border-radius: 8px;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .black1::before {
             content: '';
             position: absolute;
             top: 0;
@@ -432,6 +448,16 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
+        .link-black {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #7f849c40;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
         .link-peach {
             display: inline-block;
             padding: 12px 20px;
@@ -538,6 +564,9 @@
         .link-sapphire:hover {
             background-color: #74c7ec40;
         }
+        .link-black:hover {
+            background-color: #ffffff40;
+        }
         .link-peach:hover {
             background-color: #fab38740;
         }
@@ -584,34 +613,34 @@
                 transform: translateY(0);
             }
         }
-        .peach1:nth-child(1) {
+        .black1:nth-child(1) {
             animation-delay: 0s;
         }
-        .red1:nth-child(2) {
+        .peach1:nth-child(2) {
             animation-delay: 0.2s;
         }
-        .mauve1:nth-child(3) {
+        .red1:nth-child(3) {
             animation-delay: 0.4s;
         }
-        .green1:nth-child(4) {
+        .mauve1:nth-child(4) {
             animation-delay: 0.6s;
         }
-        .sapphire1:nth-child(5) {
+        .green1:nth-child(5) {
             animation-delay: 0.8s;
         }
-        .yellow1:nth-child(6) {
-            animation-delay: 1s;
+        .sapphire1:nth-child(6) {
+            animation-delay: 1.0s;
         }
-        .lavender1:nth-child(7) {
+        .yellow1:nth-child(7) {
             animation-delay: 1.2s;
         }
-        .blue1:nth-child(8) {
+        .lavender1:nth-child(8) {
             animation-delay: 1.4s;
         }
-        .pink1:nth-child(9) {
+        .blue1:nth-child(9) {
             animation-delay: 1.6s;
         }
-        .item:nth-child(10) {
+        .pink1:nth-child(10) {
             animation-delay: 1.8s;
         }
         .item:nth-child(11) {
@@ -625,6 +654,9 @@
         }
         .item:nth-child(14) {
             animation-delay: 2.6s;
+        }
+        .item:nth-child(15) {
+            animation-delay: 2.8s;
         }
         .nao{
             color: #f38ba8;
@@ -673,7 +705,7 @@
             .item-list {
                 justify-content: center;
             }
-            .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .mauve1, .yellow1, .blue1, .pink1, .tokyo1, .moon1, .dawn1 {
+            .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .mauve1, .yellow1, .blue1, .pink1, .tokyo1, .moon1, .dawn1, .black1 {
                 width: 100%;
                 max-width: 100%;
             }
@@ -699,6 +731,9 @@
         }
         .yellow{
             color: #f9e2af;
+        }
+        .black{
+            color: #ffffff;
         }
     
         .red{
@@ -781,6 +816,18 @@
     <div class="container">
         <h1>Pick your favorite <p class="alo">*RICE*</p></h1>
         <ul class="item-list">
+            
+            
+            <li class="black1">
+                <img src="black.gif" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="black">black-white</p></h2>
+                    <p class="item-description">hyprland rice based on black-white wallpapers</p>
+                    <a target="_blank" href="https://github.com/sansroot/hypr-dots/tree/peach" class="link-black">Github repo</a>
+                </div>
+            </li>
+
+
             <li class="peach1">
                 <img src="peach.gif" alt="Imagem de Preview" class="item-image">
                 <div class="item-info">
@@ -902,7 +949,7 @@
             document.getElementById("audio-player2").play();
             document.getElementById("audio-player3").play();
             const carouselText = document.querySelector(".carousel-text");
-            carouselText.textContent = "void in blue (slowed)"; 
+            carouselText.textContent = "antent - empathy"; 
             this.style.display = 'none';
             document.getElementById("stop-button").style.display = 'inline-block'; 
             startRain();
