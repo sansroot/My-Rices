@@ -75,11 +75,6 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('wallpaper.png');
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed; 
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -158,7 +153,7 @@
             gap: 20px;
             justify-content: center;
         }
-        .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .yellow1, .mauve1, .pink1, .blue1, .tokyo1, .dawn1, .moon1, .black1 {
+        .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .yellow1, .mauve1, .pink1, .blue1, .tokyo1, .dawn1, .moon1, .black1,.redanon1, .greenanon1, .anon1, .blueanon1 {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -218,19 +213,72 @@
             border: 2px solid #f5c2e7;
             background-color: #f5c2e740;
         }
-        .dawn1:hover {
-            border: 2px solid #E4C8B0;
-            background-color: #E4C8B040;
+        .redanon1:hover {
+            border: 2px solid #EF3946;
+            background-color: #EF394640;
         }
-        .tokyo1:hover {
-            border: 2px solid #B69983;
-            background-color: #B6998340;
+        .greenanon1:hover {
+            border: 2px solid #00FF66;
+            background-color: #00FF6640;
         }
-        .moon1:hover {
-            border: 2px solid #F0BE8B;
-            background-color: #F0BE8B40;
+        .blueanon1:hover {
+            border: 2px solid #18CBEF;
+            background-color: #18CBEF40;
         }
+        .anon1:hover {
+            border: 2px solid #ffffff;
+            background-color: #ffffff40;
+        }
+
         .peach1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 68, 0.5);
+            border-radius: 8px;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .redanon1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 68, 0.5);
+            border-radius: 8px;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .greenanon1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 68, 0.5);
+            border-radius: 8px;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .blueanon1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(49, 50, 68, 0.5);
+            border-radius: 8px;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .anon1::before {
             content: '';
             position: absolute;
             top: 0;
@@ -528,36 +576,47 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
-        .link-dawn {
+        .link-blueanon {
             display: inline-block;
             padding: 12px 20px;
             background-color: #7f849c40;
-            color: #E4C8B0;
+            color: #18CBEF;
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
-        .link-tokyo {
+        .link-redanon {
             display: inline-block;
             padding: 12px 20px;
             background-color: #7f849c40;
-            color: #B69983;
+            color: #EF3946;
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
-        .link-moon {
+        .link-greenanon {
             display: inline-block;
             padding: 12px 20px;
             background-color: #7f849c40;
-            color: #F0BE8B;
+            color: #00FF66;
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
+        .link-anon {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #7f849c40;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
         .link-button:hover {
             background-color: #cba6f740;
         }
@@ -588,14 +647,17 @@
         .link-pink:hover {
             background-color: #f5c2e740;
         }
-        .link-dawn:hover {
-            background-color: #E4C8B040;
+        .link-blueanon:hover {
+            background-color: #18CBEF40;
         }
-        .link-tokyo:hover {
-            background-color: #B6998340;
+        .link-redanon:hover {
+            background-color: #EF394640;
         }
-        .link-moon:hover {
-            background-color: #F0BE8B40;
+        .link-greenanon:hover {
+            background-color: #00FF6640;
+        }
+        .link-anon:hover {
+            background-color: #ffffff40;
         }
         .alo {
             font-size: 60px;
@@ -613,50 +675,62 @@
                 transform: translateY(0);
             }
         }
-        .black1:nth-child(1) {
+        .redanon1:nth-child(1) {
             animation-delay: 0s;
         }
-        .peach1:nth-child(2) {
+        .greenanon1:nth-child(2) {
             animation-delay: 0.2s;
         }
-        .red1:nth-child(3) {
+        .anon1:nth-child(3) {
             animation-delay: 0.4s;
         }
-        .mauve1:nth-child(4) {
+        .blueanon1:nth-child(4) {
             animation-delay: 0.6s;
         }
-        .green1:nth-child(5) {
+        .black1:nth-child(5) {
             animation-delay: 0.8s;
         }
-        .sapphire1:nth-child(6) {
+        .peach1:nth-child(6) {
             animation-delay: 1.0s;
         }
-        .yellow1:nth-child(7) {
+        .red1:nth-child(7) {
             animation-delay: 1.2s;
         }
-        .lavender1:nth-child(8) {
+        .mauve1:nth-child(8) {
             animation-delay: 1.4s;
         }
-        .blue1:nth-child(9) {
+        .green1:nth-child(9) {
             animation-delay: 1.6s;
         }
-        .pink1:nth-child(10) {
+        .sapphire1:nth-child(10) {
             animation-delay: 1.8s;
         }
-        .item:nth-child(11) {
+        .yellow1:nth-child(11) {
             animation-delay: 2.0s;
         }
-        .item:nth-child(12) {
+        .lavender1:nth-child(12) {
             animation-delay: 2.2s;
         }
-        .item:nth-child(13) {
+        .blue1:nth-child(13) {
             animation-delay: 2.4s;
         }
-        .item:nth-child(14) {
+        .pink1:nth-child(14) {
             animation-delay: 2.6s;
         }
         .item:nth-child(15) {
             animation-delay: 2.8s;
+        }
+        .item:nth-child(16) {
+            animation-delay: 3.0s;
+        }
+        .item:nth-child(17) {
+            animation-delay: 3.2s;
+        }
+        .item:nth-child(18) {
+            animation-delay: 3.4s;
+        }
+        .item:nth-child(19) {
+            animation-delay: 3.6s;
         }
         .nao{
             color: #f38ba8;
@@ -705,7 +779,7 @@
             .item-list {
                 justify-content: center;
             }
-            .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .mauve1, .yellow1, .blue1, .pink1, .tokyo1, .moon1, .dawn1, .black1 {
+            .item, .peach1, .sapphire1, .lavender1, .red1, .green1, .mauve1, .yellow1, .blue1, .pink1, .tokyo1, .moon1, .dawn1, .black1, .redanon1, .greenanon1, .anon1, .blueanon1 {
                 width: 100%;
                 max-width: 100%;
             }
@@ -735,23 +809,18 @@
         .black{
             color: #ffffff;
         }
-    
         .red{
             color: #f38ba8;
         }
-    
         .sapphire{
             color: #74c7ec;
         }
-    
         .green{
             color: #a6e3a1;
         }
-    
         .mauve{
             color: #cba6f7;
         }
-    
         .lavender{
             color: #b4befe;
         }
@@ -761,14 +830,17 @@
         .pink{
             color: #f5c2e7;
         }
-        .tokyo{
-            color: #B69983;
+        .redanon{
+            color: #EF3946;
         }
-        .dawn{
-            color: #E4C8B0;
+        .blueanon{
+            color: #18CBEF;
         }
-        .moon{
-            color: #F0BE8B;
+        .greenanon{
+            color: #00FF66;
+        }
+        .anon{
+            color: #ffffff;
         }
         button{
             position: absolute;
@@ -792,9 +864,20 @@
         button:hover{
             animation: colorChange 1s infinite;
         }
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
+    <video autoplay muted loop id="myVideo">
+        <source src="back.mp4" type="video/mp4">
+    </video>
     <canvas class="rain-canvas"></canvas>
     <div class="carousel-container">
         <span class="playing-text">Playing:</span>
@@ -816,8 +899,38 @@
     <div class="container">
         <h1>Pick your favorite <p class="alo">*RICE*</p></h1>
         <ul class="item-list">
-            
-            
+            <li class="redanon1">
+                <img src="red-anon.gif" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="redanon">anon-red</p></h2>
+                    <p class="item-description">hyprland rice based on red wallpapers</p>
+                    <a target="_blank" href="https://github.com/sansroot/hypr-dots/tree/anonymous-red" class="link-redanon">Github repo</a>
+                </div>
+            </li>
+            <li class="greenanon1">
+                <img src="green-anon.gif" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="greenanon">anon-green</p></h2>
+                    <p class="item-description">hyprland rice based on green wallpapers</p>
+                    <a target="_blank" href="https://github.com/sansroot/hypr-dots/tree/anonymous-green" class="link-greenanon">Github repo</a>
+                </div>
+            </li>
+            <li class="anon1">
+                <img src="anon.gif" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="anon">anonymous</p></h2>
+                    <p class="item-description">hyprland rice based on monochrome wallpapers</p>
+                    <a target="_blank" href="https://github.com/sansroot/hypr-dots/tree/anonymous" class="link-anon">Github repo</a>
+                </div>
+            </li>
+            <li class="blueanon1">
+                <img src="blue-anon.gif" alt="Imagem de Preview" class="item-image">
+                <div class="item-info">
+                    <h2 class="item-title"><p class="hyprland">[hyprland]</p> <p class="blueanon">anon-blue</p></h2>
+                    <p class="item-description">hyprland rice based on blue wallpapers</p>
+                    <a target="_blank" href="https://github.com/sansroot/hypr-dots/tree/anonymous-blue" class="link-blueanon">Github repo</a>
+                </div>
+            </li> 
             <li class="black1">
                 <img src="black.gif" alt="Imagem de Preview" class="item-image">
                 <div class="item-info">
@@ -826,8 +939,6 @@
                     <a target="_blank" href="https://github.com/sansroot/hypr-dots/tree/black" class="link-black">Github repo</a>
                 </div>
             </li>
-
-
             <li class="peach1">
                 <img src="peach.gif" alt="Imagem de Preview" class="item-image">
                 <div class="item-info">
@@ -949,7 +1060,7 @@
             document.getElementById("audio-player2").play();
             document.getElementById("audio-player3").play();
             const carouselText = document.querySelector(".carousel-text");
-            carouselText.textContent = "instupendo - six forty seven"; 
+            carouselText.textContent = "antent - i'll be your reason"; 
             this.style.display = 'none';
             document.getElementById("stop-button").style.display = 'inline-block'; 
             startRain();

@@ -1,0 +1,2 @@
+Started render process: /usr/bin/melt-7 -loglevel error -progress2 /tmp/kdenlive-BPAqpF-1.mlt
+[consumer avformat] Could not open '/home/ks/Desktop/My-Rices/back.mp4'Rendering of /home/ks/Desktop/My-Rices/back.mp4 aborted, resulting video will probably be corrupted.
