@@ -69,7 +69,7 @@
                 color: #a6e3a1;
             }
         }
-        .alo {
+        .rice {
             font-size: 60px;
             animation: colorChange1 8s infinite ease-in-out;
         }
@@ -82,6 +82,8 @@
             padding: 20px;
             position: relative;
             overflow-y: auto;
+            background-color: black;
+
         }
         .rain-canvas {
             position: absolute;
@@ -659,7 +661,7 @@
         .link-anon:hover {
             background-color: #ffffff40;
         }
-        .alo {
+        .rice {
             font-size: 60px;
         }
         audio {
@@ -732,7 +734,7 @@
         .item:nth-child(19) {
             animation-delay: 3.6s;
         }
-        .nao{
+        .unmaintained{
             color: #f38ba8;
             animation: piscar 0.8s infinite;
         }
@@ -793,6 +795,17 @@
             }
             100% {
                 opacity: 1;
+            }
+        }
+        @keyframes piscarback {
+            0% {
+                opacity: 50%;
+            }
+            50% {
+                opacity: 49%;
+            }
+            100% {
+                opacity: 50%;
             }
         }
         @keyframes desaparecer {
@@ -871,6 +884,10 @@
             min-width: 100%;
             min-height: 100%;
             z-index: -1;
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            opacity: 50%;
+            animation: piscarback 0.1s infinite;
         }
     </style>
 </head>
@@ -897,7 +914,7 @@
     <button id="play-button">▶</button>
     <button id="stop-button" style="display: none; font-weight: 700;">II</button> 
     <div class="container">
-        <h1>Pick your favorite <p class="alo">*RICE*</p></h1>
+        <h1>Pick your favorite <p class="rice">*RICE*</p></h1>
         <ul class="item-list">
             <li class="redanon1">
                 <img src="red-anon.gif" alt="Imagem de Preview" class="item-image">
@@ -1014,7 +1031,7 @@
             <li class="item">
                 <img src="dotfiles-v5.png" alt="Imagem de Preview" class="item-image">
                 <div class="item-info">
-                    <h2 class="item-title"><p class="nao">(unmaintained)</p></h2>
+                    <h2 class="item-title"><p class="unmaintained">(unmaintained)</p></h2>
                     <p class="item-description1">i3 rice based on mauve wallpapers</p>
                     <a target="_blank" href="https://github.com/sansroot/i3-dots/tree/mauve-dots-UNMAINTAINED" class="link-button">Github repo</a>
                 </div>
@@ -1022,7 +1039,7 @@
             <li class="item">
                 <img src="dotfiles-v4.png" alt="Imagem de Preview" class="item-image">
                 <div class="item-info">
-                    <h2 class="item-title"><p class="nao">(unmaintained)</p></h2>
+                    <h2 class="item-title"><p class="unmaintained">(unmaintained)</p></h2>
                     <p class="item-description1">i3 rice based on lavender wallpapers</p>
                     <a target="_blank" href="https://github.com/sansroot/i3-dots/tree/lavender-dots-UNMAINTAINED" class="link-button">Github repo</a>
                 </div>
@@ -1030,7 +1047,7 @@
             <li class="item">
                 <img src="dotfiles-v3.png" alt="Imagem de Preview" class="item-image">
                 <div class="item-info">
-                    <h2 class="item-title"><p class="nao">(unmaintained)</p></h2>
+                    <h2 class="item-title"><p class="unmaintained">(unmaintained)</p></h2>
                     <p class="item-description1">i3 rice based on catppuccin palette wallpapers</p>
                     <a target="_blank" href="https://github.com/sansroot/i3-dots/tree/mocha-dots-UNMAINTAINED" class="link-button">Github repo</a>
                 </div>
@@ -1038,7 +1055,7 @@
             <li class="item">
                 <img src="dotfiles-v2.png" alt="Imagem de Preview" class="item-image">
                 <div class="item-info">
-                    <h2 class="item-title"><p class="nao">(unmaintained)</p></h2>
+                    <h2 class="item-title"><p class="unmaintained">(unmaintained)</p></h2>
                     <p class="item-description1">i3 rice based on blue/pink wallpapers</p>
                     <a target="_blank" href="https://github.com/sansroot/i3-dots/tree/joi-dots-UNMAINTAINED" class="link-button">Github repo</a>
                 </div>
@@ -1046,7 +1063,7 @@
             <li class="item">
                 <img src="dotfiles-v1.png" alt="Imagem de Preview" class="item-image">
                 <div class="item-info">
-                    <h2 class="item-title"><p class="nao">(unmaintained)</p></h2>
+                    <h2 class="item-title"><p class="unmaintained">(unmaintained)</p></h2>
                     <p class="item-description1">i3 rice based on pink/gray wallpapers</p>
                     <a target="_blank" href="https://github.com/sansroot/i3-dots/tree/zero-two-dots-UNMAINTAINED" class="link-button">Github repo</a>
                 </div>
@@ -1060,7 +1077,7 @@
             document.getElementById("audio-player2").play();
             document.getElementById("audio-player3").play();
             const carouselText = document.querySelector(".carousel-text");
-            carouselText.textContent = "antent - i'll be your reason"; 
+            carouselText.textContent = "antent - keep me close"; 
             this.style.display = 'none';
             document.getElementById("stop-button").style.display = 'inline-block'; 
             startRain();
@@ -1107,7 +1124,6 @@
                 }
             }
         }
-
         function updateRain() {
             if (drops.length < numberOfDrops) {
                 createDrop();
@@ -1115,16 +1131,13 @@
             drawRain();
             rainInterval = requestAnimationFrame(updateRain);
         }
-
         function startRain() {
             updateRain();
         }
-
         function stopRain() {
             cancelAnimationFrame(rainInterval); 
             drops = [];
         }
-
         document.getElementById("audio-player").volume = 0.9;
         document.getElementById("audio-player2").volume = 1.0;
         document.getElementById("audio-player3").volume = 0.4;
