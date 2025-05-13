@@ -82,8 +82,11 @@
             padding: 20px;
             position: relative;
             overflow-y: auto;
-            background-color: black;
-            background-position: ;
+            background-image: url("wallpaper.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
         }
         .rain-canvas {
@@ -893,9 +896,7 @@
     </style>
 </head>
 <body>
-    <video autoplay muted loop id="myVideo">
-        <source src="back.mp4" type="video/mp4">
-    </video>
+
     <canvas class="rain-canvas"></canvas>
     <div class="carousel-container">
         <span class="playing-text">Playing:</span>
@@ -1071,77 +1072,118 @@
             </li>
         </ul>
     </div>
-    <script>
-        alert("Thanks for visiting my rices page!\nWallpaper and gifs may take some time to load\nPlease be patient, my friend! <3");
-        let rainInterval;
-        document.getElementById("play-button").addEventListener("click", function() {
-            document.getElementById("audio-player").play();
-            document.getElementById("audio-player2").play();
-            document.getElementById("audio-player3").play();
-            const carouselText = document.querySelector(".carousel-text");
-            carouselText.textContent = "antent - keep me close"; 
-            this.style.display = 'none';
-            document.getElementById("stop-button").style.display = 'inline-block'; 
-            startRain();
-        });
-        document.getElementById("stop-button").addEventListener("click", function() {
-            document.getElementById("audio-player").pause();
-            document.getElementById("audio-player2").pause();
-            document.getElementById("audio-player3").pause();
-            const carouselText = document.querySelector(".carousel-text");
-            carouselText.textContent = "xxxx"; 
-            this.style.display = 'none'; 
-            document.getElementById("play-button").style.display = 'inline-block'; 
-            stopRain(); 
-        });
-        const canvas = document.querySelector('.rain-canvas');
-        const ctx = canvas.getContext('2d');
-        let drops = [];
-        const numberOfDrops = 75;
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        function createDrop() {
-            let x = Math.random() * canvas.width;
-            let y = Math.random() * canvas.height - canvas.height;
-            let speed = Math.random() * 2 + 1;
-            let length = Math.random() * 15 + 5;
-            drops.push({ x, y, speed, length });
+   <script>
+    document.getElementById("play-button").addEventListener("click", function () {
+        document.getElementById("myVideo").play();
+    });
+    document.getElementById("play-button").addEventListener("click", function () {
+        if (!document.getElementById("myVideo")) {
+            const video = document.createElement("video");
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.id = "myVideo";
+            const source = document.createElement("source");
+            source.src = "back.mp4";
+            source.type = "video/mp4";
+            video.appendChild(source);
+            document.body.appendChild(video);
+            document.body.style.background = "black";
+            video.play();
         }
+    });
 
-        function drawRain() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(174, 194, 224, 0.6)';
-            ctx.strokeStyle = 'rgba(174, 194, 224, 0.6)';
-            ctx.lineWidth = 2;
-            for (let i = 0; i < drops.length; i++) {
-                let drop = drops[i];
-                ctx.beginPath();
-                ctx.moveTo(drop.x, drop.y);
-                ctx.lineTo(drop.x, drop.y + drop.length);
-                ctx.stroke();
-                drop.y += drop.speed;
-                if (drop.y > canvas.height) {
-                    drop.y = -drop.length;
-                }
+    document.getElementById("stop-button").addEventListener("click", function () {
+        document.getElementById("myVideo").pause();
+    });
+
+    alert("Thanks for visiting my rices page!\nWallpaper and gifs may take some time to load\nPlease be patient, my friend! <3");
+
+    let rainInterval;
+
+    document.getElementById("play-button").addEventListener("click", function () {
+        document.getElementById("audio-player").play();
+        document.getElementById("audio-player2").play();
+        document.getElementById("audio-player3").play();
+
+        const carouselText = document.querySelector(".carousel-text");
+        carouselText.textContent = "knonzz - whatever happens";
+
+        this.style.display = 'none';
+        document.getElementById("stop-button").style.display = 'inline-block';
+
+        startRain();
+    });
+
+    document.getElementById("stop-button").addEventListener("click", function () {
+        document.getElementById("audio-player").pause();
+        document.getElementById("audio-player2").pause();
+        document.getElementById("audio-player3").pause();
+
+        const carouselText = document.querySelector(".carousel-text");
+        carouselText.textContent = "xxxx";
+
+        this.style.display = 'none';
+        document.getElementById("play-button").style.display = 'inline-block';
+
+        stopRain();
+    });
+
+    const canvas = document.querySelector('.rain-canvas');
+    const ctx = canvas.getContext('2d');
+    let drops = [];
+    const numberOfDrops = 75;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function createDrop() {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height - canvas.height;
+        let speed = Math.random() * 2 + 1;
+        let length = Math.random() * 15 + 5;
+        drops.push({ x, y, speed, length });
+    }
+
+    function drawRain() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(174, 194, 224, 0.6)';
+        ctx.strokeStyle = 'rgba(174, 194, 224, 0.6)';
+        ctx.lineWidth = 2;
+
+        for (let i = 0; i < drops.length; i++) {
+            let drop = drops[i];
+            ctx.beginPath();
+            ctx.moveTo(drop.x, drop.y);
+            ctx.lineTo(drop.x, drop.y + drop.length);
+            ctx.stroke();
+
+            drop.y += drop.speed;
+            if (drop.y > canvas.height) {
+                drop.y = -drop.length;
             }
         }
-        function updateRain() {
-            if (drops.length < numberOfDrops) {
-                createDrop();
-            }
-            drawRain();
-            rainInterval = requestAnimationFrame(updateRain);
+    }
+
+    function updateRain() {
+        if (drops.length < numberOfDrops) {
+            createDrop();
         }
-        function startRain() {
-            updateRain();
-        }
-        function stopRain() {
-            cancelAnimationFrame(rainInterval); 
-            drops = [];
-        }
-        document.getElementById("audio-player").volume = 0.9;
-        document.getElementById("audio-player2").volume = 1.0;
-        document.getElementById("audio-player3").volume = 0.4;
-    </script>
+        drawRain();
+        rainInterval = requestAnimationFrame(updateRain);
+    }
+
+    function startRain() {
+        updateRain();
+    }
+
+    function stopRain() {
+        cancelAnimationFrame(rainInterval);
+        drops = [];
+    }
+
+    document.getElementById("audio-player").volume = 1.0;
+    document.getElementById("audio-player2").volume = 1.0;
+    document.getElementById("audio-player3").volume = 0.4;
+</script>
 </body>
